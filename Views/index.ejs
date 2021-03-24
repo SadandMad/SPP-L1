@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%=title %></title>
+    <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1><%=title %></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>PHOTO</th>
+                <th>NAME</th>
+                <th>STATS</br>M,BS,WS,S,T,W,A,L,SV</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(function(dataField) { %>
+                <tr>
+                    <td>
+                        <img src="<%=typeof dataField.photo !='undefined' ? dataField.photo : '' %>" width="250">
+                    </td>
+                    <td>
+                        <%= dataField.name%>
+                    </td>
+                    <td>
+                        <%= dataField.stats%>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+</body>
+<html>
